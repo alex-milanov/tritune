@@ -28,6 +28,8 @@
     "main-bower-files": "^2.9.0",
     "marked": "^0.3.3",
     "shelljs": "^0.3.0",
-    "tiny-lr": "^0.1.6"
+    "soundbank-pitch-shift": "^1.0.3",
+    "tiny-lr": "^0.1.6",
+    "webpack-stream": "^2.1.0"
   }
 }

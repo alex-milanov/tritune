@@ -14,24 +14,38 @@ html
 					input#load-sample(type="file")
 					br
 					#sample-name Sample: None
+					br
 					button#play-sample Play Sample
+					br
+					button#audio-input Audio Input On/Off
 				.widget.pitch-control
 					h3 Pitch Control
 					input.toggle-active#toggle-active-pitch-control(type="checkbox")
-					label Pitch Control
-					input#pitch-control(type="range")
+					label Transpose
+						span#pitch-control-transpose-value 0
+					input.slider#pitch-control-transpose(type="range",min=0,max=12,step=1,value=0)
+					label Wet
+						span#pitch-control-wet-value 1
+					input.slider#pitch-control-wet(type="range",min=0,max=1,step=0.1,value=1)
+					label Dry
+						span#pitch-control-dry-value 0.5
+					input.slider#pitch-control-dry(type="range",min=0,max=1,step=0.1,value=0.5)
 				.widget.xy-control
 					h3 X/Y Control
 					input.toggle-active#toggle-active-xy-control(type="checkbox")
 					label X Axis
-					input#x-control(type="range")
+						span#x-control-value
+					input.slide#x-control(type="range")
 					br
 					label Y Axis
-					input#y-control(type="range")
+						span#y-control-value
+					input.slide#y-control(type="range")
 
 		script(src="lib/jquery/dist/jquery.js")
 		script(src="lib/lodash/lodash.js")
 		script(src="lib/moment/moment.js")
+		//- webpack
+		script(src="webpack/2e84707d2f7bb6300a37.js")
 		//- iblokz
 		script(src="js/iblokz/element.js")
 		//- app

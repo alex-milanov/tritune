@@ -94,6 +94,14 @@ gulp.task('js', function(done) {
 		.on('end',done);
 });
 
+var webpack = require('webpack-stream');
+gulp.task('webpack', function() {
+	return gulp.src('./webpack.js',{
+	})
+	.pipe(webpack({}))
+	.pipe(gulp.dest('./dist/webpack/'));
+});
+
 
 /*gulp.task('nodemon', function () {
 	nodemon({

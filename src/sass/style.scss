@@ -26,6 +26,13 @@
 		> * {
 			display: block;
 		}
+		input[type=range], button {
+			width: 100%;
+		}
+		label > span {
+			float: right;
+		}
+
 		h3 {
 			text-align: center;
 			margin: -10px;
