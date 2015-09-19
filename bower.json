@@ -1,0 +1,30 @@
+{
+  "name": "3tune",
+  "version": "0.1.0",
+  "authors": [
+    "Alex Milanov <alex@i4web.biz>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1",
+    "moment": "~2.10.6"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/**/*.css",
+        "fonts/**/*"
+      ]
+    }
+  }
+}

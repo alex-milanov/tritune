@@ -1,0 +1,17 @@
+body {
+	font-family: $tritune-font;
+	margin: 0px;
+	padding: 0px;
+	background: $tritune-bg-color;
+	color: $tritune-fg-color;
+}
+
+
+i.fa {
+	&:first-child {
+		margin-right: 5px;
+	}
+	&:last-child {
+		margin-right: 0px;
+	}
+}

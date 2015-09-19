@@ -1,0 +1,39 @@
+html
+	head
+		title 3Tune
+		link(rel="stylesheet",href="lib/font-awesome/css/font-awesome.css")
+		link(rel="stylesheet",href="css/style.css")
+	body
+		.layout
+			.header
+			.workspace
+				.widget.sampler
+					h3 Sampler
+					input.toggle-active#toggle-active-sampler(type="checkbox")
+					label Load Sample
+					input#load-sample(type="file")
+					br
+					#sample-name Sample: None
+					button#play-sample Play Sample
+				.widget.pitch-control
+					h3 Pitch Control
+					input.toggle-active#toggle-active-pitch-control(type="checkbox")
+					label Pitch Control
+					input#pitch-control(type="range")
+				.widget.xy-control
+					h3 X/Y Control
+					input.toggle-active#toggle-active-xy-control(type="checkbox")
+					label X Axis
+					input#x-control(type="range")
+					br
+					label Y Axis
+					input#y-control(type="range")
+
+		script(src="lib/jquery/dist/jquery.js")
+		script(src="lib/lodash/lodash.js")
+		script(src="lib/moment/moment.js")
+		//- iblokz
+		script(src="js/iblokz/element.js")
+		//- app
+		script(src="js/tritune/instr/sampler.js")
+		script(src="js/init.js")

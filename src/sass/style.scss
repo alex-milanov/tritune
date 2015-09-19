@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Play:400,700&subset=latin,cyrillic-ext,cyrillic);
+
+@import "inc/vars.scss";
+@import "inc/common.scss";
+
+.workspace {
+	.widget {
+		position: absolute;
+		top: 10px;
+		width: 32%;
+		height: 400px;
+		border: 2px solid #aaa;
+		display: inline-block;
+		margin: 0px;
+		padding: 10px;
+		box-sizing: border-box;
+		&.sampler {
+			left: 1%;
+		}
+		&.pitch-control {
+			left: 34%;
+		}
+		&.xy-control {
+			left: 67%;
+		}
+		> * {
+			display: block;
+		}
+		h3 {
+			text-align: center;
+			margin: -10px;
+			margin-bottom: 10px;
+			padding: 10px 0px;
+			background: #555;
+		}
+		.toggle-active {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+	}
+}
