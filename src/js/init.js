@@ -1,6 +1,9 @@
 
 var context = new AudioContext;
 
+var stream = false;
+
+var streaming = false;
 
 var testSampler = function(context, file){
 	tritune.instr.Sampler.call(this, context, file);
@@ -38,14 +41,38 @@ testSampler.prototype.trigger = function(start, end) {
 		this.source.stop(end);
 };
 
-/*
-var pitchShift = PitchShift(audioContext)
-pitchShift.connect(audioContext.destination)
+testSampler.prototype.streamOn = function(stream){
+	this.source = this.context.createMediaStreamSource(stream);
+	var volume = this.context.createGain ? this.context.createGain() : this.context.createGainNode();
+	volume.gain.value = 0.8;
+	this.source.connect(this.pitchShift);
+	this.pitchShift.connect(volume);
+	volume.connect(this.context.destination);
+};
 
-pitchShift.transpose = 12
-pitchShift.wet.value = 1
-pitchShift.dry.value = 0.5
-*/
+(function init(g){
+	try {
+		//audio_context = new (g.AudioContext || g.webkitAudioContext);
+		console.log('Audio context OK');
+		// shim
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+		console.log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'OK' : 'fail'));
+		// use
+		navigator.getUserMedia(
+			{audio:true},
+			function(_stream){
+				stream = _stream;
+			}, 
+			function(e){fire('No live audio input ' + e);}
+		);
+	} catch (e) {
+		console.log('No web audio support in this browser');
+	}
+}(window));
+
+
+
+
 
 $(document).ready(function(){
 
@@ -61,6 +88,11 @@ $(document).ready(function(){
 
 	$("#sample-name").text("Sample: "+sampleFile);
 
+	$("#audio-input").click(function(){
+		//streaming = !streaming;
+		sampler.streamOn(stream);
+	});
+
 	$("body").on("change",".slider",function(){
 		var id = $(this).attr("id");
 
@@ -71,8 +103,7 @@ $(document).ready(function(){
 		sampler.changePitch(
 			parseInt($("#pitch-control-transpose").val()),
 			parseFloat($("#pitch-control-wet").val()),
-			parseFloat($("#pitch-control-dry").val())
-				
+			parseFloat($("#pitch-control-dry").val())	
 		);
 	});
 
