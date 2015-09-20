@@ -23,7 +23,7 @@ html
 					input.toggle-active#toggle-active-pitch-control(type="checkbox")
 					label Transpose
 						span#pitch-control-transpose-value 0
-					input.slider#pitch-control-transpose(type="range",min=0,max=12,step=1,value=0)
+					input.slider#pitch-control-transpose(type="range",min=1,max=12,step=1,value=1)
 					label Wet
 						span#pitch-control-wet-value 1
 					input.slider#pitch-control-wet(type="range",min=0,max=1,step=0.1,value=1)
@@ -35,19 +35,23 @@ html
 					input.toggle-active#toggle-active-xy-control(type="checkbox")
 					label X Axis
 						span#x-control-value
-					input.slide#x-control(type="range")
+					input.slider#x-control(type="range",min=-180,max=180,step=0.1,value=90)
 					br
 					label Y Axis
 						span#y-control-value
-					input.slide#y-control(type="range")
+					input.slider#y-control(type="range",min=-180,max=180,step=0.1,value=90)
 
 		script(src="lib/jquery/dist/jquery.js")
 		script(src="lib/lodash/lodash.js")
 		script(src="lib/moment/moment.js")
+		script(src="lib/dsp.js/dsp.js")
+		//- socket
+		//-script(src='socket.io/socket.io.js')
 		//- webpack
 		script(src="webpack/2e84707d2f7bb6300a37.js")
 		//- iblokz
 		script(src="js/iblokz/element.js")
 		//- app
+		script(src="js/tritune/effects/pitch-shift.js")
 		script(src="js/tritune/instr/sampler.js")
 		script(src="js/init.js")
