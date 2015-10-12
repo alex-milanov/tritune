@@ -2,10 +2,9 @@ body {
 	font-family: $tritune-font;
 	margin: 0px;
 	padding: 0px;
-	background: $tritune-bg-color;
+	background: nth($tritune-palette,2);
 	color: $tritune-fg-color;
 }
-
 
 i.fa {
 	&:first-child {

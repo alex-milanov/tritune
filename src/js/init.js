@@ -10,8 +10,8 @@ var testSampler = function(context, file){
 
 	this.pitchShift = PitchShift(context);
 	//this.pitchShift.connect(this.context.destination);
-	this.pitchShift.transpose = 12
-	this.pitchShift.wet.value = 1
+	this.pitchShift.transpose = 0
+	this.pitchShift.wet.value = 0.3
 	this.pitchShift.dry.value = 0.5
 
 }
@@ -85,7 +85,7 @@ testSampler.prototype.streamOn = function(stream){
 $(document).ready(function(){
 
 	//var sampleFile = "samples/141710__mushroomjesus__strumstick-4-fret-barred.wav"
-	var sampleFile = "samples/aaaaa.wav"
+	var sampleFile = "samples/church_organ02.ogg"
 
 
 	var sampler = new testSampler(context, sampleFile);

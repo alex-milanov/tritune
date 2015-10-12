@@ -6,9 +6,13 @@ html
 	body
 		.layout
 			.header
+				h1
+					i.fa.fa-music
+					span TriTune 
+				h2 - A modular accessible instrument
 			.workspace
 				.widget.sampler
-					h3 Sampler
+					h3 Sampler / Sound Source
 					input.toggle-active#toggle-active-sampler(type="checkbox")
 					label Load Sample
 					input#load-sample(type="file")
@@ -23,10 +27,10 @@ html
 					input.toggle-active#toggle-active-pitch-control(type="checkbox")
 					label Transpose
 						span#pitch-control-transpose-value 0
-					input.slider#pitch-control-transpose(type="range",min=1,max=12,step=1,value=1)
+					input.slider#pitch-control-transpose(type="range",min=0,max=12,step=1,value=0)
 					label Wet
-						span#pitch-control-wet-value 1
-					input.slider#pitch-control-wet(type="range",min=0,max=1,step=0.1,value=1)
+						span#pitch-control-wet-value 0.3
+					input.slider#pitch-control-wet(type="range",min=0,max=1,step=0.1,value=0.3)
 					label Dry
 						span#pitch-control-dry-value 0.5
 					input.slider#pitch-control-dry(type="range",min=0,max=1,step=0.1,value=0.5)
