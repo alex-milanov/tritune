@@ -1,7 +1,7 @@
 # TriTune
 A modular accessible instrument based on Web Audio API
 
-The aim of TriTune is to enable people with disabilities to express themselves in music by providing a modular system/instrument that could be tailored to their particular situation.
+The aim of TriTune is to enable people with disabilities to express themselves in music by providing a modular system/instrument that could be tailored to their particular situation. As well as enhancing the control and expressiveness of standard live performance setup. 
 The initial concept is to have 3 real world modules that would be connected and configured in the TriTune app.
 - Sound Source/Sampler - guitar string, microphone
 - Pitch Control - modulating the initial sound to produce melodic lines and patterns - basically playing the blues
