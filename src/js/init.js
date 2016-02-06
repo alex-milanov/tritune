@@ -53,6 +53,7 @@ testSampler.prototype.streamOn = function(stream){
 	this.source.connect(this.pitchShift);
 	this.pitchShift.connect(volume);
 
+	//this.source.connect(volume);
 
 	volume.connect(this.context.destination);
 };
