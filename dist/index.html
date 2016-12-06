@@ -1,0 +1,54 @@
+
+<html>
+  <head>
+    <title>3Tune</title>
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="header">
+        <h1><i class="fa fa-music"></i><span>TriTune </span></h1>
+        <h2>- A modular accessible instrument</h2>
+      </div>
+      <div class="workspace">
+        <div class="widget sampler">
+          <h3>Sampler / Sound Source</h3>
+          <input id="toggle-active-sampler" type="checkbox" class="toggle-active"/>
+          <label>Load Sample</label>
+          <input id="load-sample" type="file"/><br/>
+          <div id="sample-name">Sample: None</div><br/>
+          <button id="play-sample">Play Sample</button><br/>
+          <button id="audio-input">Audio Input On/Off</button>
+        </div>
+        <div class="widget pitch-control">
+          <h3>Pitch Control</h3>
+          <input id="toggle-active-pitch-control" type="checkbox" class="toggle-active"/>
+          <label>Transpose<span id="pitch-control-transpose-value">0</span></label>
+          <input id="pitch-control-transpose" type="range" min="0" max="12" step="1" value="0" class="slider"/>
+          <label>Wet<span id="pitch-control-wet-value">0.3</span></label>
+          <input id="pitch-control-wet" type="range" min="0" max="1" step="0.1" value="0.3" class="slider"/>
+          <label>Dry<span id="pitch-control-dry-value">0.5</span></label>
+          <input id="pitch-control-dry" type="range" min="0" max="1" step="0.1" value="0.5" class="slider"/>
+        </div>
+        <div class="widget xy-control">
+          <h3>X/Y Control</h3>
+          <input id="toggle-active-xy-control" type="checkbox" class="toggle-active"/>
+          <label>X Axis<span id="x-control-value"></span></label>
+          <input id="x-control" type="range" min="-180" max="180" step="0.1" value="90" class="slider"/><br/>
+          <label>Y Axis<span id="y-control-value"></span></label>
+          <input id="y-control" type="range" min="-180" max="180" step="0.1" value="90" class="slider"/>
+        </div>
+      </div>
+    </div>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="webpack/2e84707d2f7bb6300a37.js"></script>
+    <script src="js/iblokz/element.js"></script>
+    <script src="js/tritune/effects/pitch-shift.js"></script>
+    <script src="js/tritune/instr/sampler.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Baumans:400&subset=latin,cyrillic-ext,cyrillic);
+body {
+  font-family: "Baumans" Helvetica Arial sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background: #24244C;
+  color: #eee; }
+
+i.fa:first-child {
+  margin-right: 5px; }
+
+i.fa:last-child {
+  margin-right: 0px; }
+
+.layout .header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 12px; }
+  .layout .header h1, .layout .header h2 {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    font-weight: 400; }
+  .layout .header h1 {
+    font-size: 24px; }
+  .layout .header h2 {
+    font-size: 20px; }
+
+.layout .workspace {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px; }
+
+.workspace .widget {
+  position: absolute;
+  top: 10px;
+  width: 32%;
+  height: 400px;
+  background: #353560;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0px;
+  padding: 10px;
+  box-sizing: border-box; }
+  .workspace .widget.sampler {
+    left: 1%; }
+  .workspace .widget.pitch-control {
+    left: 34%; }
+  .workspace .widget.xy-control {
+    left: 67%; }
+  .workspace .widget > * {
+    display: block; }
+  .workspace .widget input[type=range], .workspace .widget button {
+    width: 100%; }
+  .workspace .widget label > span {
+    float: right; }
+  .workspace .widget h3 {
+    text-align: center;
+    margin: -10px;
+    margin-bottom: 20px;
+    padding: 5px 0px;
+    background: #453D6B;
+    border: 5px solid #5A427B;
+    border-width: 0px 2px 2px 0px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-weight: 400; }
+  .workspace .widget .toggle-active {
+    position: absolute;
+    top: 8px;
+    left: 6px; }
